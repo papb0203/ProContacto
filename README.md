@@ -113,6 +113,9 @@
 	}
    </pre>
    <p>Lo cual se puede evidenciar en la siguiente imagen que se realizó</p>
+   <p align="center">
+        <img src="https://github.com/papb0203/ProContacto/blob/main/Get2%20punto%203.png" alt="Ejemplo 2 del ejercicio 3" width="500">
+      </p>	
    <p>3. Realizar nuevamente un request GET a la URL:https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
    <p align="center">
         <img src="https://github.com/papb0203/ProContacto/blob/main/Get3%20punto%203.png" alt="Ejemplo 3 del ejercicio 3" width="500">
@@ -124,12 +127,59 @@
 
 <section id="ejercicio-4">
   <h2>Ejercicio 4</h2>
-  <p>Contenido de la sección 4</p>
+  <p>Para este ejercicio se realizaron una serie de módulos en Trailhead, a los cuales se pueden acceder con este URL de mi perfil público: https://trailblazer.me/id/ppenuelabarrera</p>
 </section>
 
 <section id="ejercicio-5">
   <h2>Ejercicio 5</h2>
-  <p>Contenido de la sección 5</p>
+  <p>En este ejercicio se van a explicar algunos objetos de Salesforce:</p>
+  <ol>
+  <li><b>Lead</b></li>
+    <ul>
+      <li>Este objeto es utilizado para representar a los prospectos o clientes potenciales que aún no han sido calificados como oportunidades de venta. Estos objetos tienen información básica sobre personas u organizaciones que han mostrado interés en los productos o servicios de una empresa. Este objeto se relaciona con Account, Contact,Opportunity.</li>
+    </ul>
+      <li><b>Account</b></li>
+    <ul>
+      <li>Este objeto es utilizado para representar una cuenta o una empresa con la que una empresa o una organización tiene una relación comercial. Estos objetos se utilizan para almacenar información sobre clientes, prospectos, socios comerciales y otras identidades con las que se interactúa. Este objeto se relaciona con Contact, Opportunity, Case, Asset.</li>
+    </ul>
+      <li><b>Contact</b></li>
+    <ul>
+      <li>Este objeto es utilizado para representar información sobre individuos o contactos comerciales, como clientes, socios, proveedores o empleados. Estos objetos pueden tener campos estándar o campos personalizados. Y tienen relaciones con Account y Opportunity.</li>
+    </ul>
+      <li><b>Opportunity</b></li>
+    <ul>
+      <li>Este objeto es utilizado para representar una oportunidad de negocio o venta potencial. Contiene información sobre una posible venta, el valor estimado de la venta, la etapa del proceso de ventas, entre otros. Este objeto tiene relación con Account,Contact y Product.</li>
+    </ul>
+      <li><b>Product</b></li>
+    <ul>
+      <li>Este objeto es utilizado para representar los productos o servicios que una empresa ofrece a sus clientes. Tiene relación con Pricebook, Opportunity, Asset y Quote..</li>
+    </ul>
+      <li><b>PriceBook</b></li>
+    <ul>
+      <li>Este objeto se utiliza para gestionar la información sobre los libros de precios de productos o servicios que se ofrecen a los clientes. Contiene los productos o servicios con sus precios correspondientes. Este objeto tiene relación con Opportunity y Quote. </li>
+    </ul>
+      <li><b>Quote</b></li>
+    <ul>
+      <li>Este objeto es utilizado para crear cotizaciones o propuestas comerciales para los clientes. Tiene relación con Opportunity,Account y Contact.</li>
+    </ul>
+      <li><b>Asset</b></li>
+    <ul>
+      <li>Este objeto se utiliza para realizar seguimiento de activos, como productos físicos o servicios, que son propiedad de una empresa o una organización. Este objeto tiene relación con Account,Contact y Product.</li>
+    </ul>
+      <li><em><b>Case</b></em></li>
+    <ul>
+      <li>Este objeto es utilizado para gestionar y dar seguimiento a las solicitudes o problemas al cliente. Este objeto tiene relación con Account y Contact.</li>
+    </ul>
+      <li><b>Article</b></li>
+    <ul>
+      <li>Este objeto se utiliza para gestionar artículos o contenido que se puede utilizar en la base de conocimientos o portal de autoservicio de una organización. Este objeto tiene relación con ninguno de estos.</li>
+    </ul>
+</ol>
+<p align="center">
+  Diagrama de clases
+</p>
+
+
 </section>
 
 <section id="ejercicio-6">
