@@ -99,6 +99,27 @@
 <section id="ejercicio-3">
   <h2>Ejercicio 3</h2>
   <p>Para este ejercicio se realizaron una serie de pasos para realizar un request GET y POST de una URL, esto se realizó en POSTMAN. Los pasos que se realizaron son:</p>
+  <p>1. Realizar un request GET a la URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
+   <p align="center">
+        <img src="https://github.com/papb0203/ProContacto/blob/main/Get1%20punto%203.png" alt="Ejemplo 1 del ejercicio 3" width="500">
+      </p>
+      
+   <p>2. Realizar un request POST a la URL anterior, y con body:</p>
+   <pre>
+      	{
+
+	"name":"Tu nombre", 
+	"email":tunombre.tuapellido@procontacto.com.mx"
+	}
+   </pre>
+   <p>Lo cual se puede evidenciar en la siguiente imagen que se realizó</p>
+   <p>3. Realizar nuevamente un request GET a la URL:https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
+   <p align="center">
+        <img src="https://github.com/papb0203/ProContacto/blob/main/Get3%20punto%203.png" alt="Ejemplo 3 del ejercicio 3" width="500">
+      </p>
+      <h3>¿Qué diferencias se observan entre las llamadas el punto 1 y 3?</h3>
+      <p>En el punto 1 se pueden mirar toda la información de los aspirantes en el JSON, después en el punto 2 cuando se realiza el POST se ha agregado la información al JSON y se puede evidenciar esto en el punto 3 cuando ya aparece mi información.</p>
+    
 </section>
 
 <section id="ejercicio-4">
