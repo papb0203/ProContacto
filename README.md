@@ -311,38 +311,38 @@
   <p>Para esta sección práctica se realizó primero un GET en POSTMAN al siguiente URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json, esto con el fin de encontrar mi ID el cual es:-NRtHsgnmLvUjQ4dRndr. Posteriormente, se adiciona un campo al objeto Contact llamado idprocontacto y se realizaron estos códigos con el fin de desarrollar un trigger que modifique y adicione el email cuando vaya a registrar o cambiar algún contacto. Los códigos son los siguientes:  </p>
   <em>EmailChange</em>
   <pre>
-    public class EmailChange {
-    public static void updateEmail(List<Contact> contacts) {
-        
-        Set<String> contactsIds = new Set<String>();
-        for(Contact c : contacts){
-            contactsIds.add(c.idprocontacto__c);
+    public class EmailHandler {
+    public static void updateContactEmail(List<Contact> contacts) {
+        Set<String> contactIds = new Set<String>();
+        for(Contact c : contacts) {
+            contactIds.add(c.IdProContacto__c);
         }
         
+        
+        String endpoint = 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json?orderBy="$key"&equalTo="' + String.join(new List<String>(contactIds), '" or "') + '"';
         HttpRequest request = new HttpRequest();
-        String endpoint = 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json?orderBy="$key"&equalTo="' + String.join(new List<String>(contactsIds), '" or "') + '"';
         request.setEndpoint(endpoint);
         request.setMethod('GET');
         
         Http http = new Http();
-    	HttpResponse response = http.send(request);
+        HTTPResponse response = http.send(request);
+        ContactDataWrapper[] contactsData = (ContactDataWrapper[])JSON.deserialize(response.getBody(), List<ContactDataWrapper>.class);
         
-        if(response.getStatusCode() == 200) {
-            Map<String, Object> contactsResults = (Map<String, Object>) 		JSON.deserializeUntyped(response.getBody());
-            for(Contact c: contacts) {
-                if(contactsResults.containsKey(c.idprocontacto__c)){
-                    Map<String, Object> contact = (Map<String, Object>) 			contactsResults.get(c.idprocontacto__c);
-                    if(contact.containsKey('email')){
- 						c.email = 		(String)contact.get('email');
-                    }
+        for(ContactDataWrapper contactData : contactsData) {
+            for(Contact c : contacts) {
+                if(c.IdProContacto__c == contactData.IdProContacto && contactData.email != null) {
+                    c.Email = contactData.email;
                 }
             }
-            update contacts;
-       }
-       
-   }  
+        }
+        update contacts;
+    }
+    
+    public class ContactDataWrapper {
+        public String IdProContacto;
+        public String email;
+    }
 }
-
    </pre>
    
    <em>EmailTrigger</em>
