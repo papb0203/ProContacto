@@ -178,17 +178,187 @@
 <p align="center">
   Diagrama de clases
 </p>
-
+<p align="center">
+  <img src="https://github.com/papb0203/ProContacto/blob/main/Diagrama%20Prueba%20Tecnica.drawio.png" alt="Imagen">
+</p>
 
 </section>
 
 <section id="ejercicio-6">
   <h2>Ejercicio 6</h2>
-  <p>Contenido de la sección 6</p>
+  <p>Preguntas sobre Salesforce:</p>
+  <h3>Soluciones de Salesforce</h3>
+  <li><em>¿Qué es Salesforce?</em>
+      <p>Es un sistema de CRM que contiene una gran cantidad de funciones estándar, o productos y funciones que no necesitan configuración y que puede utilizar para dirigir una empresa.</p>
+    </li>
+    <li><em>¿Qué es Sales Cloud?</em>
+      <p>Es una plataforma de gestión de ventas que tiene Salesforce, la cual permite a las empresas optimizar los procesos de ventas, aumentar la eficiencia y mejorar la relación con los clientes.</p>
+    </li>
+    <li><em>¿Qué es Service Cloud?</em>
+      <p>Es una herramienta de Salesforce para mejorar la experiencia del cliente a través de la gestión de casos y el soporte al cliente, ayudando a las empresas para aumentar su eficacia, su productividad y de esta manera mejorar la relación con sus clientes.</p>
+    </li>
+    <li><em>¿Qué es Health Cloud?</em>
+      <p>Es una solución que creo Salesforce para la gestión de la atención médica que ayuda a coordinar y personalizar la atención del paciente, mejorar la eficiencia y la productividad con una amplia gama de herramientas y funcionalidades.</p>
+    </li>
+      <li><em>¿Qué es Marketing Cloud?</em>
+      <p>Es una plataforma de marketing digital que permite a las empresas gestionar todas sus actividades de marketing en una sola plataforma integrada, adicionalmente ayuda a las empresas a crear y coordinar campañas de marketing personalizadas y efectivas.</p>
+    </li>
+    <h3>Funcionalidades de Salesforce</h3>
+    <li><em>¿Qué es un RecordType?</em>
+      <p>Es una forma de categorizar y personalizar los registros de un objeto, lo cual permite personalizar los campos y la estructura de cada registro y de esta manera facilita la automatización de los procesos empresariales.</p>
+    </li>
+     <li><em>¿Qué es un ReportType?</em>
+      <p>Es una forma de definir cómo se relacionan los datos de diferentes objetos en un informe, permitiendo crear informes personalizados que pueden combinar datos de múltiples objetos en una sola vista.</p>
+    </li>
+    <li><em>¿Qué es un Page Layout?</em>
+      <p>Es una forma de definir la apariencia y el comportamiento de los campos en una página de registro de un objeto.</p>
+    </li>
+    <li><em>¿Qué es un Compact Layout?</em>
+      <p>Es una forma de definir qué campos se muestran en un resumen de registro, lo que permite a los usuarios ver de forma rápida y eficiente la información más importante sobre un registro en particular.</p>
+    </li>
+     <li><em>¿Qué es un Compact Layout?</em>
+      <p>Es una forma de definir qué campos se muestran en un resumen de registro, lo que permite a los usuarios ver de forma rápida y eficiente la información más importante sobre un registro en particular.</p>
+    </li>
+     <li><em>¿Qué es un Perﬁl?</em>
+      <p>Un perfil es un conjunto de permisos y configuraciones que determinan qué pueden hacer los usuarios en una organización. Los perfiles se utilizan para controlar el acceso a objetos, campos, funciones y datos en Salesforce.</p>
+    </li>
+    <li><em>¿Qué es un Rol?</em>
+      <p>Un rol es una forma de controlar el acceso a los datos de la organización mediante la creación de una jerarquía de acceso a los datos. Esta jerarquía permite a los usuarios ver y editar los registros según su posición en la jerarquía.</p>
+    </li>
+     <li><em>¿Qué es un Validation Rule?</em>
+      <p>Es una regla que se utiliza para garantizar que los datos ingresados en un registro cumplan ciertos requisitos antes de que se puedan guardar en la base de datos.</p>
+    </li>
+    <li><em>¿Qué diferencia hay entre una relación Master Detail y Lookup?</em>
+      <p>Se encuentran 4 principales diferencias entre Master Detail y Lookup, las cuales son:
+      
+-	Dependencia de registro: En el caso de Master Detail el registro secundario depende del registro maestro, lo cual implica que si se elimina el registro maestro se eliminan todos los registros asociados a él, mientras que en el caso de Lookup los registros secundarios no dependen del registro maestro y pueden existir independientemente del registro maestro. 
+
+-	Campos requeridos: En el caso de Master Detail los campos obligatorios del registro maestro se convierten en campos obligatorios en el registro secundario, mientras que en la relación Lookup los campos requeridos en el registro maestro no tienen que ser campos requeridos en el registro secundario.
+
+-	Herencia de permisos: En el caso de Master Detail los permisos de los registros secundarios heredan los permisos del registro maestro, mientras que en la relación Lookup los permisos no se heredan.
+
+-	Rol del propietario: En el caso de Master Detail el registro secundario siempre hereda el rol de propietario del registro maestro, lo cual implica que el registro secundario pertenece al mismo usuario o equipo del registro maestro, mientras que en la relación Lookup el registro secundario puede tener el rol de propietario diferente al del registro maestro.
+
+</p>
+    </li>
+    <li><em>¿Qué es un Sandbox?</em>
+      <p>Es un entorno de pruebas y desarrollo separado de la instancia de producción, la cual se utiliza para realizar pruebas, experimentar con nuevas funcionalidades, desarrollar nuevas aplicaciones y personalizar la configuración sin afectar a la instancia de producción.</p>
+    </li>
+    <li><em>¿Qué es un ChangeSet?</em>
+      <p>Se utiliza para recopilar y organizar todos los componentes que se han modificado, como objetos personalizados, campos, perfiles, permisos, flujos de trabajo, informes, entre otros.</p>
+    </li>
+    <li><em>¿Para qué sirve el import Wizard de Salesforce?</em>
+      <p>Es una herramienta que se utiliza para importar grandes cantidades de datos en una instancia de Salesforce. Es una forma rápida y sencilla de cargar datos desde fuentes externas, como hoja de cálculo de Excel, archivos CSV y archivos de Microsoft.</p>
+    </li>
+     <li><em>¿Para qué sirve la funcionalidad Web to Lead?</em>
+      <p>Es  una herramienta que permite a las empresas capturar y gestionar automáticamente las solicitudes de soporte de los clientes de su sitio web, también se pueden crear casos de soporte.</p>
+    </li>
+    <li><em>¿Para qué sirve la funcionalidad Omnichannel?</em>
+      <p>Es una herramienta que permite a las empresas administrar múltiples canales de comunicación y mejorar la experiencia del cliente.</p>
+    </li>
+     <li><em>¿Para qué sirve la funcionalidad Chatter?</em>
+      <p>Es una herramienta de colaboración y comunicación que permite a los usuarios compartir información, discutir ideas y colaborar en proyectos dentro de la plataforma Salesforce.</p>
+    </li>
+    
+   <h3>Conceptos generales</h3>
+   <li><em>¿Qué signiﬁca SaaS?</em>
+      <p>Es un modelo de distribución de software en el que el proveedor del servicio aloja y mantiene la aplicación en sus servidores y los usuarios acceden a ella a través de internet utilizando un navegador web.</p>
+    </li>
+    <li><em>¿Salesforce es Saas?</em>
+      <p>Sí, ya que Salesforce proporciona una plataforma en línea que permite a las empresas gestionar y automatizar sus proceso de ventas, marketing y atención al cliente.</p>
+    </li>
+    <li><em>¿Qué signiﬁca que una solución sea Cloud?</em>
+      <p>Cuando una solución es cloud significa que está basada en la nube, lo cual significa que se ejecuta en servidores remotos en lugar de en la computadora local del usuario.</p>
+    </li>
+   <li><em>¿Qué signiﬁca que una solución sea On-Premise?</em>
+      <p>Significa que está instalada y se ejecuta en los servidores locales de la empresa o de los usuarios, en lugar de estar alojada en la nube. Lo cual significa que la empresa es responsable de adquirir, instalar, configurar, mantener y actualizar los servidores y software necesarios para que la aplicación funcione.</p>
+    </li>
+     <li><em>¿Qué es un pipeline de ventas?</em>
+      <p>Es una representación visual de las diferentes etapas que sigue un cliente potencial desde que se convierte en un lead hasta que finalmente se convierte en un cliente.</p>
+    </li>
+    <li><em>¿Qué es un funnel de ventas?</em>
+      <p>Un funnel de ventas también es conocido como un embudo de ventas debido a que se hace una semejanza a que se empieza con una gran cantidad de clientes potenciales entrando en la parte superior y un número cada vez menor de ellos avanzando en el proceso de ventas, hasta llegar a la conversión. Por lo tanto un funnel de ventas es una representación visual del proceso de ventas que sigue un cliente potencial desde su primer contacto con una empresa hasta la conversión en un cliente.</p>
+    </li>
+    <li><em>¿Qué signiﬁca Customer Experience?</em>
+      <p>Se refiere a la percepción general que un cliente tiene de todas las interacciones que ha tenido con una empresa a lo largo del tiempo, desde el primer contacto hasta la postventa y el soporte al cliente.</p>
+    </li>
+    <li><em>¿Qué signiﬁca omnicanalidad?</em>
+      <p>Es una estrategia de experiencia del cliente que implica la integración y coordinación de múltiples canales de comunicación y puntos de contacto para brindar una experiencia coherente y unificada al cliente.</p>
+    </li>
+     <li><em>¿Qué signiﬁca que un negocio sea B2B?¿Qué signiﬁca que un negocio sea B2C?¿Qué es un KPI?</em>
+      <p>Que un negocio sea B2B significa que son empresas que venden productos o servicios a otras empresas. Cuando un negocio es B2C significa que son empresas que venden productos o servicios directamente a los consumidores. Y los KPI son medidas específicas utilizadas para evaluar el desempeño de una empresa, departamento, proceso o empleado.</p>
+    </li>
+    <li><em>¿Qué es una API y en qué se diferencia de una Rest API?</em>
+      <p>Una API es un conjunto de protocolos que permiten que diferentes aplicaciones y sistemas se comuniquen entre sí y compartan información y funcionalidades. Y la diferencia con una Rest API es que esta utiliza una arquitectura basada en estándares web, mientras que otros tipo de APIs pueden tener diferentes arquitecturas y protocolos de comunicación.</p>
+    </li>
+    <li><em>¿Qué es un Proceso Batch?</em>
+      <p>Es una forma de procesar grandes volúmenes de registros de forma programática en lotes, en lugar de procesarlos uno por uno.</p>
+    </li>
+    <li><em>¿Qué es Kanban?</em>
+      <p>Es una técnica visual y flexible de gestión de proyectos y procesos que permite una mejor planificación, seguimiento y mejora continua del trabajo.</p>
+    </li>
+    <li><em>¿Qué es un ERP?</em>
+      <p>Es una software de gestión empresarial que integra y automatiza una amplia variedad de procesos y funciones de negocio, tales como finanzas, contabilidad, compras, ventas, producción, inventario, recursos humanos, entre otros.</p>
+    </li>
+    <li><em>¿Salesforce es un ERP?</em>
+      <p>Salesforce se centra principalmente en la gestión de las relaciones con los clientes y en la mejora de la experiencia del cliente, en lugar de la gestión integral de la empresa, por lo tanto no se representa como un ERP. </p>
+    </li>
+    
 </section>
 
 <section id="ejercicio-7">
   <h2>Ejercicio 7</h2>
-  <p>Contenido de la sección </p>
+  <p>Para esta sección práctica se realizó primero un GET en POSTMAN al siguiente URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json, esto con el fin de encontrar mi ID el cual es:-NRtHsgnmLvUjQ4dRndr. Posteriormente, se adiciona un campo al objeto Contact llamado idprocontacto y se realizaron estos códigos con el fin de desarrollar un trigger que modifique y adicione el email cuando vaya a registrar o cambiar algún contacto. Los códigos son los siguientes:  </p>
+  <em>EmailChange</em>
+  <pre>
+    public class EmailChange {
+    public static void updateEmail(List<Contact> contacts) {
+        
+        Set<String> contactsIds = new Set<String>();
+        for(Contact c : contacts){
+            contactsIds.add(c.idprocontacto__c);
+        }
+        
+        HttpRequest request = new HttpRequest();
+        String endpoint = 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json?orderBy="$key"&equalTo="' + String.join(new List<String>(contactsIds), '" or "') + '"';
+        request.setEndpoint(endpoint);
+        request.setMethod('GET');
+        
+        Http http = new Http();
+    	HttpResponse response = http.send(request);
+        
+        if(response.getStatusCode() == 200) {
+            Map<String, Object> contactsResults = (Map<String, Object>) 		JSON.deserializeUntyped(response.getBody());
+            for(Contact c: contacts) {
+                if(contactsResults.containsKey(c.idprocontacto__c)){
+                    Map<String, Object> contact = (Map<String, Object>) 			contactsResults.get(c.idprocontacto__c);
+                    if(contact.containsKey('email')){
+ 						c.email = 		(String)contact.get('email');
+                    }
+                }
+            }
+            update contacts;
+       }
+       
+   }  
+}
+
+   </pre>
+   
+   <em>EmailTrigger</em>
+   <pre>
+   trigger EmailTrigger on Contact (after insert, after update) {
+	List<Contact> contactsUpdate = new List<Contact>();
+    
+    for(Contact c: Trigger.New){
+        if(c.idprocontacto__c != null && c.email != null){
+			contactsUpdate.add(c);            
+        }
+    }
+    EmailChange.updateEmail(contactsUpdate);
+}
+
+   </pre>
+  
 </section>
 
