@@ -101,7 +101,7 @@
   <p>Para este ejercicio se realizaron una serie de pasos para realizar un request GET y POST de una URL, esto se realizó en POSTMAN. Los pasos que se realizaron son:</p>
   <p>1. Realizar un request GET a la URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
    <p align="center">
-        <img src="https://github.com/papb0203/ProContacto/blob/main/Get1%20punto%203.png" alt="Ejemplo 1 del ejercicio 3" width="500">
+        <img src="  https://github.com/papb0203/ProContacto/blob/87813e96334ce08a42aa1522ebb0c545fec5bb21/Parte%201%2C%20punto%203.png" alt="Ejemplo 1 del ejercicio 3" width="500">
       </p>
       
    <p>2. Realizar un request POST a la URL anterior, y con body:</p>
@@ -114,11 +114,11 @@
    </pre>
    <p>Lo cual se puede evidenciar en la siguiente imagen que se realizó</p>
    <p align="center">
-        <img src="https://github.com/papb0203/ProContacto/blob/main/Get2%20punto%203.png" alt="Ejemplo 2 del ejercicio 3" width="500">
+        <img src="https://github.com/papb0203/ProContacto/blob/87813e96334ce08a42aa1522ebb0c545fec5bb21/Parte%202%2C%20punto3.png" alt="Ejemplo 2 del ejercicio 3" width="500">
       </p>	
    <p>3. Realizar nuevamente un request GET a la URL:https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
    <p align="center">
-        <img src="https://github.com/papb0203/ProContacto/blob/main/Get3%20punto%203.png" alt="Ejemplo 3 del ejercicio 3" width="500">
+        <img src="https://github.com/papb0203/ProContacto/blob/87813e96334ce08a42aa1522ebb0c545fec5bb21/Parte%203%2C%20punto%203.png" alt="Ejemplo 3 del ejercicio 3" width="500">
       </p>
       <h3>¿Qué diferencias se observan entre las llamadas el punto 1 y 3?</h3>
       <p>En el punto 1 se pueden mirar toda la información de los aspirantes en el JSON, después en el punto 2 cuando se realiza el POST se ha agregado la información al JSON y se puede evidenciar esto en el punto 3 cuando ya aparece mi información.</p>
@@ -180,7 +180,7 @@
   Diagrama de clases
 </p>
 <p align="center">
-  <img src="https://github.com/papb0203/ProContacto/blob/main/Diagrama%20Prueba%20Tecnica.drawio.png" alt="Imagen">
+  <img src="" alt="Imagen">
 </p>
 
 </section>
@@ -309,57 +309,4 @@
 
 <section id="ejercicio-7">
   <h2>Ejercicio 7</h2>
-  <p>Para esta sección práctica se realizó primero un GET en POSTMAN al siguiente URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json, esto con el fin de encontrar mi ID el cual es:-NRtHsgnmLvUjQ4dRndr. Posteriormente, se adiciona un campo al objeto Contact llamado idprocontacto y se realizaron estos códigos con el fin de desarrollar un trigger que modifique y adicione el email cuando vaya a registrar o cambiar algún contacto. Los códigos son los siguientes:  </p>
-  <em>EmailChange</em>
-  <pre>
-    public class EmailHandler {
-    public static void updateContactEmail(List<Contact> contacts) {
-        Set<String> contactIds = new Set<String>();
-        for(Contact c : contacts) {
-            contactIds.add(c.IdProContacto__c);
-        }
-        
-        
-        String endpoint = 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json?orderBy="$key"&equalTo="' + String.join(new List<String>(contactIds), '" or "') + '"';
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint(endpoint);
-        request.setMethod('GET');
-        
-        Http http = new Http();
-        HTTPResponse response = http.send(request);
-        ContactDataWrapper[] contactsData = (ContactDataWrapper[])JSON.deserialize(response.getBody(), List<ContactDataWrapper>.class);
-        
-        for(ContactDataWrapper contactData : contactsData) {
-            for(Contact c : contacts) {
-                if(c.IdProContacto__c == contactData.IdProContacto && contactData.email != null) {
-                    c.Email = contactData.email;
-                }
-            }
-        }
-        update contacts;
-    }
-    
-    public class ContactDataWrapper {
-        public String IdProContacto;
-        public String email;
-    }
-}
-   </pre>
-   
-   <em>EmailTrigger</em>
-   <pre>
-   trigger EmailTrigger on Contact (after insert, after update) {
-	List<Contact> contactsUpdate = new List<Contact>();
-    
-    for(Contact c: Trigger.New){
-        if(c.idprocontacto__c != null && c.email != null){
-			contactsUpdate.add(c);            
-        }
-    }
-    EmailChange.updateEmail(contactsUpdate);
-}
-
-   </pre>
   
-</section>
-
