@@ -127,7 +127,8 @@
 
 <section id="ejercicio-4">
   <h2>Ejercicio 4</h2>
-  <p>Para este ejercicio se realizaron una serie de módulos en Trailhead, a los cuales se pueden acceder con este URL de mi perfil público: https://trailblazer.me/id/ppenuelabarrera</p>
+  <p>Para este ejercicio se realizaron una serie de módulos en Trailhead, a los cuales se pueden acceder con este URL de mi perfil público: 				 
+   https://www.salesforce.com/trailblazer/paulapenuela8434</p>
 </section>
 
 <section id="ejercicio-5">
