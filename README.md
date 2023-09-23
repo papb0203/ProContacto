@@ -101,7 +101,7 @@
   <p>Para este ejercicio se realizaron una serie de pasos para realizar un request GET y POST de una URL, esto se realizó en POSTMAN. Los pasos que se realizaron son:</p>
   <p>1. Realizar un request GET a la URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json</p>
    <p align="center">
-        <img src="  https://github.com/papb0203/ProContacto/blob/87813e96334ce08a42aa1522ebb0c545fec5bb21/Parte%201%2C%20punto%203.png" alt="Ejemplo 1 del ejercicio 3" width="500">
+        <img src="https://github.com/papb0203/ProContacto/blob/a66537b57277af5bf459af3ad6708ea4e8e1b623/Parte%201%2C%20punto%203.png" alt="Ejemplo 1 del ejercicio 3" width="500">
       </p>
       
    <p>2. Realizar un request POST a la URL anterior, y con body:</p>
