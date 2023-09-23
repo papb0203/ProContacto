@@ -309,4 +309,8 @@
 
 <section id="ejercicio-7">
   <h2>Ejercicio 7</h2>
+  <p>Para esta sección práctica se realizó primero un GET en POSTMAN al siguiente URL: https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json, esto con el fin de encontrar mi 
+  ID el cual es:- NeiZ_MqBZFRqIDE24QR. Posteriormente, se adiciona un campo al objeto Contact llamado idprocontacto y se realizaron estos códigos con el fin de desarrollar un trigger que 
+  modifique y adicione el email cuando vaya a registrar o cambiar algún contacto. Los códigos son los siguientes:  </p>
+
   
