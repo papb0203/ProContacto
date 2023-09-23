@@ -180,7 +180,7 @@
   Diagrama de clases
 </p>
 <p align="center">
-  <img src="" alt="Imagen">
+  <img src="https://github.com/papb0203/ProContacto/blob/42f6c302b39d6c961356aba422b09708a82f3aff/Diagrama%20salesforce.drawio.png" alt="Imagen">
 </p>
 
 </section>
