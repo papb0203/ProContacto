@@ -322,16 +322,16 @@ public class EmailChange {
         for(Id procontactoId: contactsId){
             Contact c = [SELECT idprocontacto__c FROM Contact WHERE id=:procontactoId AND idprocontacto__c != null LIMIT 1];
             Http http = new Http();
-        	HttpRequest request = new HttpRequest();
-        	request.setEndpoint('https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/' + c.idprocontacto__c + '.json');
-       		request.setMethod('GET');
-        	HTTPResponse response = http.send(request);
+            HttpRequest request = new HttpRequest();
+            request.setEndpoint('https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/' + c.idprocontacto__c + '.json');
+       	    request.setMethod('GET');
+            HTTPResponse response = http.send(request);
             String responseBody = response.getBody();
-         	if (response.getStatusCode() == 200 ){
-           		 Map<String,Object> contactsData = (Map<String,Object>)JSON.deserializeUntyped(responseBody);
-                 if(c.idprocontacto__c != null) {
-                     c.Email = (String) contactsData.get('email');
-                     contacts.add(c);
+            if (response.getStatusCode() == 200 ){
+           	Map<String,Object> contactsData = (Map<String,Object>)JSON.deserializeUntyped(responseBody);
+                if(c.idprocontacto__c != null) {
+                   c.Email = (String) contactsData.get('email');
+                   contacts.add(c);
                 }
             }
         }
