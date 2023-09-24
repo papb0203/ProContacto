@@ -322,8 +322,9 @@ public class EmailChange {
         for(Id procontactoId: contactsId){
             Contact c = [SELECT idprocontacto__c FROM Contact WHERE id=:procontactoId AND idprocontacto__c != null LIMIT 1];
             Http http = new Http();
+	    String URL= 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/'+c.idprocontacto__c+'.json';
             HttpRequest request = new HttpRequest();
-            request.setEndpoint('https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/' + c.idprocontacto__c + '.json');
+            request.setEndpoint(URL);
        	    request.setMethod('GET');
             HTTPResponse response = http.send(request);
             String responseBody = response.getBody();
@@ -344,10 +345,8 @@ public class EmailChange {
 trigger EmailTrigger on Contact (after insert, after update) {
 List<Id>contactsId  = new List<Id>();
   
-for(Contact c: Trigger.New){
-      if(c.idprocontacto__c != null && c.email != null){
-			contactsId.add(c.Id);            
-        }
+    for(Contact c: Trigger.New){
+		contactsId.add(c.Id);           
     }
      if (Trigger.isAfter && Trigger.isInsert) {
          EmailChange.updateEmail(contactsId);
