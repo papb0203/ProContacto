@@ -313,4 +313,47 @@
   ID el cual es:- NeiZ_MqBZFRqIDE24QR. Posteriormente, se adiciona un campo al objeto Contact llamado idprocontacto y se realizaron estos códigos con el fin de desarrollar un trigger que 
   modifique y adicione el email cuando vaya a registrar o cambiar algún contacto. Los códigos son los siguientes:  </p>
 
+  <em>EmailChange</em>
+  <pre>
+public class EmailChange {
+ @future(callout=true)
+   public static void updateEmail(List<Id> contactsId) {
+        List<Contact> contacts= new List<Contact>();
+        for(Id procontactoId: contactsId){
+            Contact c = [SELECT idprocontacto__c FROM Contact WHERE id=:procontactoId AND idprocontacto__c != null LIMIT 1];
+            Http http = new Http();
+        	HttpRequest request = new HttpRequest();
+        	request.setEndpoint('https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/' + c.idprocontacto__c + '.json');
+       		request.setMethod('GET');
+        	HTTPResponse response = http.send(request);
+            String responseBody = response.getBody();
+         	if (response.getStatusCode() == 200 ){
+           		 Map<String,Object> contactsData = (Map<String,Object>)JSON.deserializeUntyped(responseBody);
+                 if(c.idprocontacto__c != null) {
+                     c.Email = (String) contactsData.get('email');
+                     contacts.add(c);
+                }
+            }
+        }
+       update contacts;
+    }
+}	
+</pre>
+   <em>EmailTrigger</em>
+   <pre>
+trigger EmailTrigger on Contact (after insert, after update) {
+List<Id>contactsId  = new List<Id>();
+  
+for(Contact c: Trigger.New){
+      if(c.idprocontacto__c != null && c.email != null){
+			contactsId.add(c.Id);            
+        }
+    }
+     if (Trigger.isAfter && Trigger.isInsert) {
+         EmailChange.updateEmail(contactsId);
+    }
+}
+</pre>		
+
+
   
