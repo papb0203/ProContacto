@@ -328,7 +328,7 @@ public class EmailChange {
             HTTPResponse response = http.send(request);
             String responseBody = response.getBody();
             if (response.getStatusCode() == 200 ){
-           	Map<String,Object>contactsData = (Map<String,Object>)JSON.deserializeUntyped(responseBody);
+           	Map &ltString,Object&gt contactsData = (Map&ltString,Object&gt)JSON.deserializeUntyped(responseBody);
                 if(c.idprocontacto__c != null) {
                    c.Email = (String) contactsData.get('email');
                    contacts.add(c);
