@@ -354,5 +354,45 @@ List<Id>contactsId  = new List<Id>();
 }
 </pre>		
 
+<p>Los ejercicios corregidos son:  </p>
+
+  <em>EmailChange</em>
+  <pre>
+  public class EmailChange {
+   @future(callout=true)
+   public static void updateEmail(List<Id> contactsId) {
+      List<Contact> contacts= new List<Contact>();
+      contacts = [SELECT idprocontacto__c FROM Contact WHERE Id IN :contactsId AND idprocontacto__c != null];
+      for(Integer i=0;i<contacts.size();i++){
+           Http http = new Http();
+            String URL= 'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/'+contacts[i].idprocontacto__c+'.json';
+            HttpRequest request = new HttpRequest();
+            request.setEndpoint(URL);
+       	    request.setMethod('GET');
+            HTTPResponse response = http.send(request);
+            String responseBody = response.getBody();
+            if (response.getStatusCode() == 200 ){
+              Map<String,Object> contactsData = (Map<String,Object>)JSON.deserializeUntyped(responseBody);
+              contacts[i].Email = (String) contactsData.get('email');
+            }
+        }
+       update contacts;
+    }
+}	
+</pre>
+   <em>EmailTrigger</em>
+<pre>
+trigger EmailTrigger on Contact (after insert, after update) {
+	List<Id>contactsId  = new List<Id>();
+  
+    for(Contact c: Trigger.New){
+		contactsId.add(c.Id);           
+    }
+     if ((Trigger.isAfter && Trigger.isInsert) || (Trigger.isAfter && Trigger.isUpdate)) {
+         EmailChange.updateEmail(contactsId);
+    }
+}
+</pre>		
+
 
   
